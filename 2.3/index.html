@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script
+    src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"
+  >
+    //react-dom은 React element를 html에 두는 역할을 하는거야
+  </script>
+  <script>
+    const root = document.querySelector("#root");
+    const h3 = React.createElement(
+      "h3",
+      { onMouseEnter: () => console.log("Mouse Enter") },
+      "Hello I'm a span"
+    ); //React JS로 element를 생성한것 id도 프러퍼티를 준 것
+    const btn = React.createElement(
+      "button",
+      {
+        onClick: () => console.log("I'm clicked"),
+        style: { backgroundColor: "tomato" },
+      },
+      "Click me"
+    );
+    const container = React.createElement("div", null, [h3, btn]);
+    ReactDOM.render(container, root);
+  </script>
+</html>

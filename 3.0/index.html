@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script
+    src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"
+  >
+    // JSX는 javaScript를 확장한 문법
+        //react-dom은 React element를 html에 두는 역할을 하는거야
+  </script>
+  <script type="text/babel">
+    const root = document.querySelector("#root");
+    let counter = 0;
+    function Render() {
+      ReactDOM.render(<Container />, root);
+    }
+    const countUp = () => {
+      Render();
+      return (counter = counter + 1);
+    };
+    const Container = () => (
+      <div>
+        <h3>Total clicks : {counter}</h3>
+        <button onClick={countUp}>Click me</button>
+      </div>
+    );
+    Render();
+    //리액트 제이에스는 우리가 했던 보통 때 했던 작업과 거꾸로하는 특징을 가졌다 바닐라 js는 html을 먼저 만들고 그것을 javascript로 가져와서 html을 수정하는 방식이었다.  하지만 여기보듯이 reactjs는 모든것이 자바스크립트로 시작됨 그다음에 html이 된다
+    //리액트 제이에스는 업데이트가 필요한 element를 업데이트 할것이라는 말이다 필요한 것만 한다 리액트 js가 결과물인 html을 업데이트 하는 것 리액트 제이에스는 UI를 보여질내용만 컨트롤 가능
+    //리액트 js 가 그것을 html로번역한다
+  </script>
+</html>

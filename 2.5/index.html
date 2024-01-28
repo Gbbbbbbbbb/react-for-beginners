@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script
+    src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"
+  >
+    // JSX는 javaScript를 확장한 문법
+        //react-dom은 React element를 html에 두는 역할을 하는거야
+  </script>
+  <script type="text/babel">
+    const root = document.querySelector("#root");
+    const Title = (
+      <h3 id="title" onMouseEnter={() => console.log("Mouse Enter")}>
+        Hello I'm a title
+      </h3>
+    );
+    const Button = (
+      <button
+        onClick={() => console.log("I'm clicked")}
+        style={{ backgroundColor: "tomato" }}
+      >
+        Click me
+      </button>
+    );
+    // 세번째 칸 content 내용물
+    //React JS로 element를 생성한것 id도 프러퍼티를 준 것
+
+    const container = React.createElement("div", null, [Title, Button]);
+    ReactDOM.render(container, root); //이코드의 의미는 React element들을 root 안에 보여주라는 뜻
+  </script>
+</html>
